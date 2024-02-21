@@ -2,7 +2,7 @@
 
 import React from 'react'
 import Logo from '../../../public/img/logo.svg'
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 
 import {IoIosArrowDown} from "react-icons/io";
 import { MdArrowOutward } from "react-icons/md";
@@ -15,7 +15,22 @@ import { useAutoAnimate } from '@formkit/auto-animate/react';
 
 const Nav = () => {
     const [animatationParent] = useAutoAnimate()
+    const [color, setColor] = useState('transparent')
+    const [bgColor, setBgColor] = useState('transparent')
     const [isSideMenuOpen, setSideMenu] = useState(false)
+
+    useEffect(() => {
+        const ChangeColor = () => {
+            if(window.scrollY >= 90) {
+                setColor("#000")
+                setBgColor("#000")
+            } else {
+                setColor("transparent")
+                setBgColor("transparent")
+            }
+        };
+        window.addEventListener('scroll', ChangeColor)
+    },[])
 
     function openSideMenu(){
         setSideMenu(true)
@@ -26,7 +41,8 @@ const Nav = () => {
     }
 
   return ( 
-    <header className='mx-auto w-[95%] flex justify-between py-5 text-sm'>
+    <header style={{backgroundColor: `${color}`}} className='fixed left-0 top-0 w-full text-sm ease-in duration z-10'>
+        <div className='max-w-[1520px] m-auto flex justify-between py-5 px-5 items-center'>
         {/* left side */}
         <div ref={animatationParent} className='flex items-center gap-20'>
             {/* logo */}
@@ -37,20 +53,19 @@ const Nav = () => {
                 <Link 
                     key={indx}
                     href={data.link ?? "#"} 
-                    className='relative group pr-2 py-3 transition-all text-lg'
+                    className='relative group pr-2 py-3 transition-all text-lg text-white'
                 >
-                    <li className='flex gap-2 items-center'>
+                    <li className='flex gap-2 items-center relative pl-2.5'>
                        <span>{data.label}</span>
                        {data.children && (
                          <IoIosArrowDown className='group-hover:rotate-180 duration-300 transition-all'/> 
                        )}
-                    </li>
-
-                    {/* dropdown */}
-                    {data.children && (
-                    <div className='absolute right-0 top-10 w-full flex-col hidden py-3 group-hover:flex transition-all'>
+                   
+                      {/* dropdown */}
+                      {data.children && (
+                      <div style={{ backgroundColor: `${bgColor}`}} className='absolute left-0 top-10 px-2.5 flex-col hidden py-3 group-hover:flex transition-all'>
                         {data.children.map((ch,indx) =>
-                        <Link 
+                         <Link 
                             key={indx}
                             href={ch.link ?? "#"} 
                             className='flex cursor-pointer items-center py-1 text-lg'
@@ -58,10 +73,11 @@ const Nav = () => {
                             <span className='whitespace-nowrap'>
                                 {ch.label}
                             </span>
-                         </Link>
-                        )}
-                    </div>
-                    )}
+                          </Link>
+                         )}
+                      </div>
+                     )}
+                     </li>
                 </Link>
                  )}
             </ul>
@@ -71,7 +87,7 @@ const Nav = () => {
         {/* right side data */}
         <div className='flex items-center gap-8'>
             {/* {CTA} */}
-            <div className='hidden xl:flex gap-6'>
+            <div className='hidden xl:flex gap-6 text-white'>
                 <Link href="#" className='hidden lg:inline-block text-lg'>
                     Search
                 </Link>
@@ -87,7 +103,9 @@ const Nav = () => {
                 </Link>
             </div>
                                     
-            <h3 className='xl:hidden cursor-pointer' onClick={openSideMenu}> Menu </h3>
+            <h3 className='xl:hidden cursor-pointer text-white text-xl' onClick={openSideMenu}> Menu </h3>
+        </div>
+
         </div>
     </header>
   )

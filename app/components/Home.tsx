@@ -1,8 +1,16 @@
 import React from 'react'
 
+import Nav from './Navigation/Nav'
+import Hero from './Hero/Hero'
+import Intro from './Intro/Intro'
+
 const Home = () => {
   return (
-    <div></div>
+    <>
+      <Nav/>
+      <Hero/>
+      <Intro/>
+    </>
   )
 }
 

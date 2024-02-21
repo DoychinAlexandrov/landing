@@ -2,21 +2,34 @@
 @tailwind components;
 @tailwind utilities;
 
-/* :root {
+@layer base {
+  :root {
+    --bg-color: 0, 0%, 100%;
+    --logo-color: 49, 88%, 54%;
+    --border-white-color: 242.2, 49.4%, 67.45%;
+    --text-gray-color: 218, 6%, 27%;
+  }
+
+  main {
+    min-height: 100dvh;
+  }
+}
+
+ /* :root {
   --foreground-rgb: 0, 0, 0;
   --background-start-rgb: 214, 219, 220;
   --background-end-rgb: 255, 255, 255;
-}
+} */
 
-@media (prefers-color-scheme: dark) {
+ /* @media (prefers-color-scheme: dark) {
   :root {
     --foreground-rgb: 255, 255, 255;
     --background-start-rgb: 0, 0, 0;
     --background-end-rgb: 0, 0, 0;
   }
-}
+} */
 
-body {
+/* body {
   color: rgb(var(--foreground-rgb));
   background: linear-gradient(
       to bottom,
@@ -24,10 +37,15 @@ body {
       rgb(var(--background-end-rgb))
     )
     rgb(var(--background-start-rgb));
+} */
+
+body {
+  background-color: #000
 }
 
 @layer utilities {
-  .text-balance {
-    text-wrap: balance;
+  .wrapper {
+     @apply max-w-[1520px] m-auto;
   }
-} */
+}
+

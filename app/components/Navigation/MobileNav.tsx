@@ -27,7 +27,7 @@ const MobileNav = ({closeSideMenu} :  { closeSideMenu: () => void}) => {
             </div>
 
              <ul className='flex flex-col text-base gap-2 transition-all border-t border-white border-solid'>
-                {navItems.map((data,indx) => 
+                {navItems.map((data,indx) =>  
                 <SingleNavItem
                     key={indx}
                     label={data.label}

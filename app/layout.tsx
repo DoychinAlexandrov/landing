@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import { Source_Sans_3 } from "next/font/google";
 import "./globals.css";
-import ResponsiveNav from "./components/Navigation/ResponsiveNav";
+import Nav from "./components/Navigation/Nav";
 
 const sourceSansPro = Source_Sans_3({
   subsets: ["latin"],
@@ -37,7 +37,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={`${sourceSansPro.variable}`}>
-            <ResponsiveNav/>
+            <Nav/>
             {children}
       </body>
     </html>
