@@ -55,22 +55,22 @@ const Nav = () => {
                     href={data.link ?? "#"} 
                     className='relative group pr-2 py-3 transition-all text-lg text-white'
                 >
-                    <li className='flex gap-2 items-center relative pl-2.5'>
-                       <span>{data.label}</span>
+                    <li className='flex gap-1 items-center relative pl-2.5'>
+                       <span className='hover:underline decoration-1 underline-offset-4'>{data.label}</span>
                        {data.children && (
                          <IoIosArrowDown className='group-hover:rotate-180 duration-300 transition-all'/> 
                        )}
                    
                       {/* dropdown */}
                       {data.children && (
-                      <div style={{ backgroundColor: `${bgColor}`}} className='absolute left-0 top-10 px-2.5 flex-col hidden py-3 group-hover:flex transition-all'>
+                      <div style={{ backgroundColor: `${bgColor}`}} className='absolute left-0 top-10 px-2.5 flex-col hidden group-hover:flex transition-all'>
                         {data.children.map((ch,indx) =>
                          <Link 
                             key={indx}
                             href={ch.link ?? "#"} 
                             className='flex cursor-pointer items-center py-1 text-lg'
                             >
-                            <span className='whitespace-nowrap'>
+                            <span className='whitespace-nowrap hover:underline decoration-1 underline-offset-4'>
                                 {ch.label}
                             </span>
                           </Link>
@@ -88,11 +88,11 @@ const Nav = () => {
         <div className='flex items-center gap-8'>
             {/* {CTA} */}
             <div className='hidden xl:flex gap-6 text-white'>
-                <Link href="#" className='hidden lg:inline-block text-lg'>
+                <Link href="#" className='hidden lg:inline-block text-lg hover:underline decoration-1 underline-offset-4'>
                     Search
                 </Link>
 
-                <Link href="#" className='hidden lg:inline-block relative text-lg custom-underline'>
+                <Link href="#" className='hidden lg:inline-block relative text-lg custom-underline hover:underline decoration-1 underline-offset-4'>
                     Log in
                     <MdArrowOutward className='absolute top-1.5 left-11' />
                 </Link>
@@ -105,8 +105,7 @@ const Nav = () => {
                                     
             <h3 className='xl:hidden cursor-pointer text-white text-xl' onClick={openSideMenu}> Menu </h3>
         </div>
-
-        </div>
+      </div>
     </header>
   )
 }
