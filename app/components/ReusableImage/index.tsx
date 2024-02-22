@@ -16,7 +16,7 @@ function ReusableImage({ imgSrc, text, href }: ReusableImageProps) {
         <Image src={`${imgSrc}`} width={400} height={400} alt="Image one" className="w-full object-cover"/>
         
         <Link
-          href="/"
+          href=""
           className="text-white font-semibold font-sourceSansProFont text-xl hover:underline hover_decoration-1 underline-offset-2"
         >
           {text}

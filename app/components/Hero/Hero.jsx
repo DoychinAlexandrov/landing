@@ -19,7 +19,7 @@ const Hero = () => {
                 <h1 className='text-4xl mb-16 pr-2.5 md:text-6xl xl:max-w-[850px] w-auto xl:text-7xl'>Introducing Sora: Creating video from text</h1>
 
                 <button className='mr-auto'>
-                    <Link href="#" className='text-lg border border-solid border-gray-300 rounded py-1 px-2 hover:bg-white hover:text-black'>
+                    <Link href="" className='text-lg border border-solid border-gray-300 rounded py-1 px-2 hover:bg-white hover:text-black'>
                         Learn more about Sora
                     </Link>
                 </button>

@@ -11,7 +11,7 @@ const Intro = () => {
                     Pioneering research on the path to AGI
                 </h2>
 
-                <Link href={'#'} className="mr-auto underline hover:no-underline underline-offset-4">
+                <Link href='' className="mr-auto underline hover:no-underline underline-offset-4">
                         Learn about our research
                 </Link>
             </div>
@@ -21,7 +21,7 @@ const Intro = () => {
                     Transforming work and creativity with AI
                 </h2>
                         
-                <Link href={'#'} className="mr-auto underline hover:no-underline underline-offset-4">
+                <Link href='' className="mr-auto underline hover:no-underline underline-offset-4">
                     Explore our products
                 </Link>
             </div>
@@ -31,7 +31,7 @@ const Intro = () => {
                     Join us in shaping the future of technology
                 </h2>
 
-                <Link href={'#'} className="mr-auto underline hover:no-underline underline-offset-4">
+                <Link href='' className="mr-auto underline hover:no-underline underline-offset-4">
                     View careers
                 </Link>
             </div>

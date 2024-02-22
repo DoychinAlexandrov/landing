@@ -2,7 +2,7 @@
 
 import React from 'react'
 import Logo from '../../../public/img/logo.svg'
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useRef } from 'react';
 
 import {IoIosArrowDown} from "react-icons/io";
 import { MdArrowOutward } from "react-icons/md";
@@ -18,7 +18,42 @@ const Nav = () => {
     const [color, setColor] = useState('transparent')
     const [bgColor, setBgColor] = useState('transparent')
     const [isSideMenuOpen, setSideMenu] = useState(false)
+    const [openDropdown, setOpenDropdown] = useState<number | null>(null);
+    
+    function toggleDropdown(indx: number) {
+        setOpenDropdown(openDropdown === indx ? null : indx);
+  }
 
+
+  //Close dropdown on outside click
+  const useOutsideClick = (callback: () => void) => {
+
+  const ref = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+        const handleClickOutside = (event: MouseEvent) => {
+        if (ref.current && !ref.current.contains(event.target as Node)) {
+            callback();
+           }
+        };
+
+        document.addEventListener('mousedown', handleClickOutside);
+
+        return () => {
+            document.removeEventListener('mousedown', handleClickOutside);
+         };
+        }, [callback]);
+
+        return ref;
+    };
+
+    const ref = useOutsideClick(() => {
+        if(openDropdown !== null){
+            setOpenDropdown(null)
+        }
+    });
+
+    //Change header background on scroll
     useEffect(() => {
         const ChangeColor = () => {
             if(window.scrollY >= 90) {
@@ -42,36 +77,39 @@ const Nav = () => {
 
   return ( 
     <header style={{backgroundColor: `${color}`}} className='fixed left-0 top-0 w-full text-sm ease-in duration z-10'>
-        <div className='max-w-[1520px] m-auto flex justify-between py-5 px-5 items-center'>
+        <div ref={ref} className='max-w-[1520px] m-auto flex justify-between py-5 px-5 items-center'>
         {/* left side */}
         <div ref={animatationParent} className='flex items-center gap-20'>
             {/* logo */}
             <Image src={Logo} alt='logo'/>
             {isSideMenuOpen && <MobileNav closeSideMenu={closeSideMenu} />}
-             <ul className='hidden xl:flex items-center gap-4 transition-all'>
+            
+            <ul  className='hidden xl:flex items-center gap-4 transition-all'>
                 {navItems.map((data,indx) => 
+                
                 <Link 
+                    onClick={() => toggleDropdown(indx)}
                     key={indx}
-                    href={data.link ?? "#"} 
+                    href={data.link ?? ""} 
                     className='relative group pr-2 py-3 transition-all text-lg text-white'
                 >
                     <li className='flex gap-1 items-center relative pl-2.5'>
                        <span className='hover:underline decoration-1 underline-offset-4'>{data.label}</span>
                        {data.children && (
-                         <IoIosArrowDown className='group-hover:rotate-180 duration-300 transition-all'/> 
-                       )}
+                          <IoIosArrowDown className={openDropdown === indx ? 'rotate-180' : ''} />
+                    )}
                    
                       {/* dropdown */}
-                      {data.children && (
-                      <div style={{ backgroundColor: `${bgColor}`}} className='absolute left-0 top-10 px-2.5 flex-col hidden group-hover:flex transition-all'>
+                      {openDropdown === indx && data.children && (
+                      <div style={{ backgroundColor: `${bgColor}`}} className='absolute left-0 top-10 px-2.5 flex-col transition-all'>
                         {data.children.map((ch,indx) =>
-                         <Link 
-                            key={indx}
-                            href={ch.link ?? "#"} 
-                            className='flex cursor-pointer items-center py-1 text-lg'
+                           <Link 
+                              key={indx}
+                              href={ch.link ?? ""} 
+                              className='flex cursor-pointer items-center py-1 text-lg'
                             >
                             <span className='whitespace-nowrap hover:underline decoration-1 underline-offset-4'>
-                                {ch.label}
+                               {ch.label}
                             </span>
                           </Link>
                          )}
@@ -88,16 +126,16 @@ const Nav = () => {
         <div className='flex items-center gap-8'>
             {/* {CTA} */}
             <div className='hidden xl:flex gap-6 text-white'>
-                <Link href="#" className='hidden lg:inline-block text-lg hover:underline decoration-1 underline-offset-4'>
+                <Link href="" className='hidden lg:inline-block text-lg hover:underline decoration-1 underline-offset-4'>
                     Search
                 </Link>
 
-                <Link href="#" className='hidden lg:inline-block relative text-lg custom-underline hover:underline decoration-1 underline-offset-4'>
+                <Link href="" className='hidden lg:inline-block relative text-lg custom-underline hover:underline decoration-1 underline-offset-4'>
                     Log in
-                    <MdArrowOutward className='absolute top-1.5 left-11' />
+                    <MdArrowOutward className='absolute top-1.5 left-12' />
                 </Link>
 
-                <Link href="#" className='hidden lg:inline-block relative text-lg border border-solid border-gray-300 rounded pl-5 pr-8 hover:bg-white hover:text-black'>
+                <Link href="" className='hidden lg:inline-block relative text-lg border border-solid border-gray-300 rounded pl-5 pr-8 hover:bg-white hover:text-black'>
                     Try ChatGPT 
                     <MdArrowOutward className='absolute top-1.5 right-4' />
                 </Link>

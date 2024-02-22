@@ -26,40 +26,44 @@ const MobileNav = ({closeSideMenu} :  { closeSideMenu: () => void}) => {
                 <span className='cursor-pointer text-xl text-white' onClick={closeSideMenu}>Close</span>
             </div>
 
-             <ul className='flex flex-col text-base gap-2 transition-all border-t border-white border-solid'>
-                {navItems.map((data,indx) =>  
-                <SingleNavItem
-                    key={indx}
-                    label={data.label}
-                    link={data.link}
-                >
-                    {data.children}
-                </SingleNavItem>
-                 )}
-            </ul>
+            <div className='h-full pb-24 flex flex-col'>
+                <div>
+                    <ul className='flex flex-col text-base gap-2 transition-all border-t border-white border-solid'>
+                        {navItems.map((data,indx) =>  
+                        <SingleNavItem
+                            key={indx}
+                            label={data.label}
+                            link={data.link}
+                        >
+                            {data.children}
+                        </SingleNavItem>
+                        )}
+                    </ul>
 
-             <div className='flex flex-col'>
-                <Link href="#" className='flex py-2.5 text-lg justify-between items-center text-white border-b border-white border-solid'>
-                    <span>Log in</span>
-                  
-                    <MdArrowOutward className='text-lg text-white'/>
-                </Link>
+                    <div className='flex flex-col'>
+                        <Link href="" className='flex py-2.5 text-lg justify-between items-center text-white border-b border-white border-solid'>
+                            <span>Log in</span>
+                        
+                            <MdArrowOutward className='text-lg text-white'/>
+                        </Link>
 
-                <Link href="#" className='flex py-2.5 text-lg justify-between items-center text-white border-b border-white border-solid'>
-                   <span>Try ChatGPT</span> 
+                        <Link href="" className='flex py-2.5 text-lg justify-between items-center text-white border-b border-white border-solid'>
+                        <span>Try ChatGPT</span> 
 
-                    <MdArrowOutward className='text-lg text-white'/>
-                </Link>
-            </div>
+                            <MdArrowOutward className='text-lg text-white'/>
+                        </Link>
+                    </div>
+                 </div>
 
-            <div className='relative mt-32'>
-                <form action="">
-                    <label htmlFor='search' className='hidden'>Search</label>
+                <div className='relative mt-auto pb-7'>
+                    <form action="">
+                        <label htmlFor='search' className='hidden'>Search</label>
 
-                    <input type="text" name='search' id='search' placeholder='Search for anything..' className='bg-black p-2 rounded text-neutral-500 border border-neutral-700 w-full' />
+                        <input type="text" name='search' id='search' placeholder='Search for anything..' className='bg-black p-2 rounded text-neutral-500 border border-neutral-700 w-full' />
 
-                    <CiSearch className='absolute top-0 right-0 mt-3.5 mr-4 text-white'></CiSearch>
-                </form>
+                        <CiSearch className='absolute top-0 right-0 mt-3.5 mr-4 text-white'></CiSearch>
+                    </form>
+                </div>
             </div>
         </div>
     </div>
@@ -77,7 +81,7 @@ const MobileNav = ({closeSideMenu} :  { closeSideMenu: () => void}) => {
            <Link 
              ref={animationParent}
              onClick={toggleItem}
-             href={data.link ?? "#"} 
+             href={data.link ?? ""} 
              className='relative py-1 transition-all text-lg border-b border-white border-solid text-white'
            >
             <li className='flex gap-2 justify-between items-center'>
@@ -99,7 +103,7 @@ const MobileNav = ({closeSideMenu} :  { closeSideMenu: () => void}) => {
                 {data.children.map((ch,indx) =>
                 <Link 
                   key={indx}
-                  href={ch.link ?? "#"} 
+                  href={ch.link ?? ""} 
                   className='flex cursor-pointer items-center py-1 text-lg'
                 >
                   <span className='whitespace-nowrap'>
