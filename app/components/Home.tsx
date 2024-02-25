@@ -7,6 +7,8 @@ import LatestUpdates from './LatestUpdates/LatestUpdates'
 import Safety from './Safety/Safety'
 import Research from './Research/Research'
 import Products from './Products/Products'
+import Careers from './Careers/Careers'
+import Testimonial from './Testimonal/Testimonial'
 
 const Home = () => {
   return (
@@ -18,6 +20,8 @@ const Home = () => {
       <Safety/>
       <Research/>
       <Products/>
+      <Careers/>
+      <Testimonial/>
     </>
   )
 }
