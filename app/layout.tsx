@@ -1,7 +1,10 @@
 import type { Metadata } from "next";
 import { Source_Sans_3 } from "next/font/google";
-import "./globals.css";
+import { ScrollProvider } from "./context/scrollContext";
+
 import Nav from "./components/Navigation/Nav";
+
+import "./globals.css";
 
 const sourceSansPro = Source_Sans_3({
   subsets: ["latin"],
@@ -28,7 +31,6 @@ export const metadata: Metadata = {
   },
 };
 
-
 export default function RootLayout({
   children,
 }: Readonly<{
@@ -37,8 +39,15 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={`${sourceSansPro.variable}`}>
-            <Nav/>
-            {children}
+        <script
+          dangerouslySetInnerHTML={{
+            __html: `history.scrollRestoration = "manual"`,
+          }}
+        />
+        <ScrollProvider>
+          <Nav/>
+          {children}
+        </ScrollProvider>
       </body>
     </html>
   );
