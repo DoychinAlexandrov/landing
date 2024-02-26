@@ -5,6 +5,7 @@ import Logo from '../../../public/img/logo.svg'
 import { useState, useEffect, useRef } from 'react';
 
 import {IoIosArrowDown} from "react-icons/io";
+import { IoIosArrowUp } from "react-icons/io"
 import { MdArrowOutward } from "react-icons/md";
 import { navItems } from '@/app/fixtures/navItems';
 
@@ -81,7 +82,9 @@ const Nav = () => {
         {/* left side */}
         <div ref={animatationParent} className='flex items-center gap-20'>
             {/* logo */}
-            <Image src={Logo} alt='logo'/>
+            <Link href=''>
+                <Image src={Logo} alt='logo'/>
+            </Link>
             {isSideMenuOpen && <MobileNav closeSideMenu={closeSideMenu} />}
             
             <ul  className='hidden xl:flex items-center gap-4 transition-all'>
@@ -95,10 +98,11 @@ const Nav = () => {
                 >
                     <li className='flex gap-1 items-center relative pl-2.5'>
                        <span className='hover:underline decoration-1 underline-offset-4'>{data.label}</span>
-                       {data.children && (
-                          <IoIosArrowDown className={openDropdown === indx ? 'rotate-180' : ''} />
-                    )}
-                   
+                        {data.children && (
+                            openDropdown === indx ? <IoIosArrowUp/> : <IoIosArrowDown/>
+                        )}
+                     </li>
+            
                       {/* dropdown */}
                       {openDropdown === indx && data.children && (
                       <div style={{ backgroundColor: `${bgColor}`}} className='absolute left-0 top-10 px-2.5 flex-col transition-all'>
@@ -115,7 +119,7 @@ const Nav = () => {
                          )}
                       </div>
                      )}
-                     </li>
+                    
                 </Link>
                  )}
             </ul>
