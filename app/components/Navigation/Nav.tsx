@@ -91,7 +91,7 @@ const Nav = () => {
                 {navItems.map((data,indx) => 
                 
                 <Link 
-                    onClick={() => toggleDropdown(indx)}
+                    onClick={() => toggleDropdown(indx) }
                     key={indx}
                     href={data.link ?? ""} 
                     className='relative group pr-2 py-3 transition-all text-lg text-white'
@@ -99,7 +99,7 @@ const Nav = () => {
                     <li className='flex gap-1 items-center relative pl-2.5'>
                        <span className='hover:underline decoration-1 underline-offset-4'>{data.label}</span>
                         {data.children && (
-                            openDropdown === indx ? <IoIosArrowUp/> : <IoIosArrowDown/>
+                            <IoIosArrowDown/>
                         )}
                      </li>
             
