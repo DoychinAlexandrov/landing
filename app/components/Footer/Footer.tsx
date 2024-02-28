@@ -5,9 +5,10 @@ import Image from 'next/image'
 import Logo from '../../../public/img/logo.svg'
 import {socialMedias} from '../../fixtures/SocialMedia'
 import { FaArrowUp } from "react-icons/fa6";
+import { footerNavItems1,footerNavItems2,footerNavItems3,footerNavItems4 } from '../../fixtures/footerNavitems'
 
 const Footer = () => {
-    const top = () => {
+    const handleScrollTop = () => {
         window.scrollTo(0,0)
     }
 
@@ -22,148 +23,68 @@ const Footer = () => {
                         </Link>
                     </div>
 
-                    <div className=''>
-                        <h4 className='text-lg font-bold'>Research</h4>
+                    <div>
+                        {footerNavItems1.map((item, index) => (
+                            <div key={index}>
+                                <h3 className='text-lg font-bold'>{item.label}</h3>
 
-                        <ul className='text-lg'>
-                            <li className='hover:underline hover:underline-offset-2 hover:decoration-1 cursor-pointer'>
-                                <Link href=''>
-                                    Overview
-                                </Link>
-                            </li>
-
-                            <li className='hover:underline hover:underline-offset-2 hover:decoration-1 cursor-pointer'>
-                                <Link href=''>
-                                    Index
-                                </Link>
-                            </li>
-
-                            <li className='hover:underline hover:underline-offset-2 hover:decoration-1 cursor-pointer'>
-                                <Link href=''>
-                                    GPT-4
-                                </Link>
-                            </li>
-
-                            <li className='hover:underline hover:underline-offset-2 hover:decoration-1 cursor-pointer'>
-                                <Link href=''>
-                                    DALLE.E-3
-                                </Link>
-                            </li>
-
-                            <li className='hover:underline hover:underline-offset-2 hover:decoration-1 cursor-pointer'>
-                                <Link href=''>
-                                    Sora
-                                </Link>
-                            </li>
-                        </ul>
+                                <ul className='text-lg'>
+                                    {item.children && item.children.map((childItem, childIndex) => (
+                                        <li key={childIndex} className='line'>
+                                            <Link href={childItem.link ?? ''}>{childItem.label}</Link>
+                                        </li>
+                                    ))}
+                                </ul>
+                            </div>
+                        ))}
                     </div>
 
-                    <div className=''>
-                        <h4 className='text-lg font-bold'>API</h4>
+                    <div>
+                        {footerNavItems2.map((item, index) => (
+                            <div key={index}>
+                                <h3 className='text-lg font-bold'>{item.label}</h3>
 
-                        <ul className='text-lg'>
-                            <li className='hover:underline hover:underline-offset-2 hover:decoration-1 cursor-pointer'>
-                                <Link href=''>
-                                    Overview
-                                </Link>
-                            </li>
-
-                            <li className='hover:underline hover:underline-offset-2 hover:decoration-1 cursor-pointer'>
-                                <Link href=''>
-                                    Pricing
-                                </Link>
-                            </li>
-
-                            <li className='hover:underline hover:underline-offset-2 hover:decoration-1 cursor-pointer'>
-                                <Link href=''>
-                                    Docs
-                                </Link>
-                            </li>
-                        </ul>
+                                <ul className='text-lg'>
+                                    {item.children && item.children.map((childItem, childIndex) => (
+                                        <li key={childIndex} className='line'>
+                                            <Link href={childItem.link ?? ''}>{childItem.label}</Link>
+                                        </li>
+                                    ))}
+                                </ul>
+                            </div>
+                        ))}
                     </div>
 
-                    <div className=''>
-                        <h4 className='text-lg font-bold'>ChatGPT</h4>
+                    <div>
+                        {footerNavItems3.map((item, index) => (
+                            <div key={index}>
+                                <h3 className='text-lg font-bold'>{item.label}</h3>
 
-                        <ul className='text-lg'>
-                            <li className='hover:underline hover:underline-offset-2 hover:decoration-1 cursor-pointer'>
-                                <Link href=''>
-                                    Overview
-                                </Link>
-                            </li>
-
-                            <li className='hover:underline hover:underline-offset-2 hover:decoration-1 cursor-pointer'>
-                                <Link href=''>
-                                    Team
-                                </Link>
-                            </li>
-
-                            <li className='hover:underline hover:underline-offset-2 hover:decoration-1 cursor-pointer'>
-                                <Link href=''>
-                                    Enterprise
-                                </Link>
-                            </li>
-
-                            <li className='hover:underline hover:underline-offset-2 hover:decoration-1 cursor-pointer'>
-                                <Link href=''>
-                                    Pricing
-                                </Link>
-                            </li>
-
-                            <li className='hover:underline hover:underline-offset-2 hover:decoration-1 cursor-pointer'>
-                                <Link href=''>
-                                    Try ChatGPT
-                                </Link>
-                            </li>
-                        </ul>
+                                <ul className='text-lg'>
+                                    {item.children && item.children.map((childItem, childIndex) => (
+                                        <li key={childIndex} className='line'>
+                                            <Link href={childItem.link ?? ''}>{childItem.label}</Link>
+                                        </li>
+                                    ))}
+                                </ul>
+                            </div>
+                        ))}
                     </div>
 
-                    <div className=''>
-                        <h4 className='text-lg font-bold'>Company</h4>
+                    <div>
+                        {footerNavItems4.map((item, index) => (
+                            <div key={index}>
+                                <h3 className='text-lg font-bold'>{item.label}</h3>
 
-                        <ul className='text-lg'>
-                            <li className='hover:underline hover:underline-offset-2 hover:decoration-1 cursor-pointer'>
-                                <Link href=''>
-                                    About
-                                </Link>
-                            </li>
-
-                            <li className='hover:underline hover:underline-offset-2 hover:decoration-1 cursor-pointer'>
-                                <Link href=''>
-                                    Blog
-                                </Link>
-                            </li>
-
-                            <li className='hover:underline hover:underline-offset-2 hover:decoration-1 cursor-pointer'>
-                                <Link href=''>
-                                    Carrers
-                                </Link>
-                            </li>
-
-                            <li className='hover:underline hover:underline-offset-2 hover:decoration-1 cursor-pointer'>
-                                <Link href=''>
-                                    Charter
-                                </Link>
-                            </li>
-
-                            <li className='hover:underline hover:underline-offset-2 hover:decoration-1 cursor-pointer'>
-                                <Link href=''>
-                                    Security
-                                </Link>
-                            </li>
-
-                            <li className='hover:underline hover:underline-offset-2 hover:decoration-1 cursor-pointer'>
-                                <Link href=''>
-                                    Customer Stories
-                                </Link>
-                            </li>
-
-                            <li className='hover:underline hover:underline-offset-2 hover:decoration-1 cursor-pointer'>
-                                <Link href=''>
-                                    Safety
-                                </Link>
-                            </li>
-                        </ul>
+                                <ul className='text-lg'>
+                                    {item.children && item.children.map((childItem, childIndex) => (
+                                        <li key={childIndex} className='line'>
+                                            <Link href={childItem.link ?? ''}>{childItem.label}</Link>
+                                        </li>
+                                    ))}
+                                </ul>
+                            </div>
+                        ))}
                     </div>
                 </div>
              </div>
@@ -204,7 +125,7 @@ const Footer = () => {
                         ))}
                     </ul>
 
-                    <button onClick={top} className='flex items-center text-lg mt-14 absolute md:relative left-0 bottom-0 hover:underline hover:underline-offset-2 hover:decoration-1 cursor-pointer'>
+                    <button onClick={handleScrollTop} className='flex items-center text-lg mt-14 absolute md:relative left-0 bottom-0 hover:underline hover:underline-offset-2 hover:decoration-1 cursor-pointer'>
                         Back to top
 
                         <FaArrowUp className='text-sm pl-1'/>
