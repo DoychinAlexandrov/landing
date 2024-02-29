@@ -42,7 +42,7 @@ export const footerNavItems2: NavItem[] = [
 				link: '#'
 			},
 			{
-				label: "Docs",
+				label: "Docs 🡕",
 				link: '#'
 			},
 		]
@@ -71,7 +71,7 @@ export const footerNavItems3: NavItem[] = [
 				link: '#'
 			},
 			{
-				label: "Try ChatGPT",
+				label: "Try ChatGPT 🡕",
 				link: '#'
 			},
 		]

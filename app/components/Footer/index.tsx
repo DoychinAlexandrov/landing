@@ -4,6 +4,7 @@ import Link from "next/link";
 import Image from "next/image";
 import Logo from "../../../public/img/logo.svg";
 import { socialMedias } from "../../fixtures/SocialMedia";
+import { documentItems } from "../../fixtures/DocumentItems"
 import { FaArrowUp } from "react-icons/fa6";
 
 import FooterItem from "./FooterItem";
@@ -41,19 +42,17 @@ const Footer = () => {
           <div className="basis-1/2 md:basis-1/3">
             <span className="text-lg font-bold">OpenAI © 2015-2024</span>
 
-            {/* TODO: Extract these into an object of values and iterate over them via map/forEach */}
-            <ul className="text-lg">
-              <li className="hover:underline hover:underline-offset-2 hover:decoration-1 cursor-pointer">
-                <Link href="">Terms & policies</Link>
-              </li>
-
-              <li className="hover:underline hover:underline-offset-2 hover:decoration-1 cursor-pointer">
-                <Link href="">Privacy policy</Link>
-              </li>
-
-              <li className="hover:underline hover:underline-offset-2 hover:decoration-1 cursor-pointer">
-                <Link href="">Brand guidelines</Link>
-              </li>
+            <ul>
+              {documentItems.map((data) => (
+                <li
+                  key={data.id}
+                  className="line"
+                >
+                  <Link href={data.link ?? ''} target="_blank">
+                     {data.label}
+                  </Link>
+                </li>
+              ))}
             </ul>
           </div>
 
@@ -64,9 +63,9 @@ const Footer = () => {
                   key={data.id}
                   className="hover:underline hover:underline-offset-2 hover:decoration-1"
                 >
-                  <a href={data.url} target="_blank" rel="noopener noreferrer">
+                  <Link href={data.url} target="_blank" rel="noopener noreferrer">
                     {data.name}
-                  </a>
+                  </Link>
                 </li>
               ))}
             </ul>
