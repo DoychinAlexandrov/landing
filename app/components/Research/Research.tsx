@@ -3,7 +3,7 @@ import Link from 'next/link'
 import { researchImgsContent } from '@/app/fixtures/ResearchContent'
 import ReusableImage from '../ReusableImage'
 
-const LatestUpdates = () => {
+const Research = () => {
   return (
     <>
      <section className='wrapper px-6 mx-auto'>
@@ -28,7 +28,7 @@ const LatestUpdates = () => {
             
             <div className="bg-black grid grid-cols-1 sm:grid-cols-2 md:grid-3 lg:grid-cols-4 pb-24 cursor-pointer -ms-2.5 -me-2.5">
                 {researchImgsContent.map((image) => (
-                <ReusableImage key={image.id} imgSrc={image.src} text={image.text} />
+                <ReusableImage key={image.id} imgSrc={image.src} text={image.text}  whiteColor={true}/>
                 ))}
             </div>
         </div>
@@ -37,4 +37,4 @@ const LatestUpdates = () => {
   )
 }
 
-export default LatestUpdates
+export default Research

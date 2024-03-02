@@ -3,6 +3,7 @@ import { Source_Sans_3 } from "next/font/google";
 import { ScrollProvider } from "./context/scrollContext";
 
 import Nav from "./components/Navigation/Nav";
+import Footer from "./components/Footer";
 
 import "./globals.css";
 
@@ -47,6 +48,7 @@ export default function RootLayout({
         <ScrollProvider>
           <Nav/>
           {children}
+          <Footer/>
         </ScrollProvider>
       </body>
     </html>
