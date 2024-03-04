@@ -11,12 +11,12 @@ const Research = () => {
             <div className="flex flex-col md:flex-row items-start md:justify-between pt-6 pb-12">
                 <div>
                     <h1 className=" text-3xl sm:text-4xl font-sourceSansProFont font-normal text-black">
-                        Research
+                        Related research
                     </h1>
                  </div>
 
-               <div className='md:w-1/2'>
-                    <Link href='' className='fade-line'> 
+               <div>
+                    <Link href='' className='fade-line text-lg'> 
                         View all researches
                     </Link>
                 </div>

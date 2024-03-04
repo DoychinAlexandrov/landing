@@ -18,7 +18,7 @@ function ReusableImage({ imgSrc, text, href, whiteColor }: ReusableImageProps) {
 
         <Link
           href={href || ""}
-          className={whiteColor ? "text-white font-semibold font-sourceSansProFont text-xl hover:underline hover_decoration-1 underline-offset-2" : "text-black font-semibold font-sourceSansProFont text-xl hover:underline hover_decoration-1 underline-offset-2"} // Conditional class based on whiteColor prop
+          className={whiteColor ? "text-white font-semibold font-sourceSansProFont text-xl hover:underline hover_decoration-1 underline-offset-2" : "text-black font-semibold font-sourceSansProFont text-xl hover:underline hover_decoration-1 underline-offset-2"} 
         >
           {text}
         </Link>

@@ -6,12 +6,12 @@ const Main = () => {
   return (
     <section className='wrapper bg-white mt-12 px-6'>
         <div className='border-t border-b border-solid border-black mt-24'>
-            <div className='flex flex-wrap mb-24'>
+            <div className='flex flex-wrap flex-col md:flex-row mb-24'>
                 <div className='basis-1/6'>
-                    <span className='text-xl'>January 10, 2024</span>
+                    <span className='text-base md:text-xl inline-block pb-4'>January 10, 2024</span>
                 </div>
 
-                <div className='basis-5/12 text-xl '>
+                <div className='basis-5/12 text-base md:text-xl pb-4'>
                     <h3 className='font-bold'>Authors</h3>
 
                     <Link href="" className='fade-line'>
@@ -19,7 +19,7 @@ const Main = () => {
                     </Link>
                 </div>
 
-                <div className='basis-5/12 flex text-xl'>
+                <div className='basis-5/12 flex text-base md:text-xl'>
                     <Link href='' className='fade-line'>
                         Announcements,
                     </Link>
@@ -31,13 +31,13 @@ const Main = () => {
              </div>
 
              <>
-                <div className='spacing mb-24'>
-                    <p className='text-lg'>
+                <div className='xl:spacing mb-24'>
+                    <p className='text-base md:text-lg'>
                         It’s been two months since we <Link href=''>announced</Link> GPTs, and users have already created over 3 million custom versions of ChatGPT. Many builders have shared their GPTs for others to use. Today, we&apos;re starting to roll out the GPT Store to ChatGPT Plus, Team and Enterprise users so you can find useful and popular GPTs. Visit chat.openai.com/gpts to explore.
                     </p>
                 </div>
 
-                <div className='spacing mb-24'>
+                <div className='xl:spacing mb-24'>
                     <h2 className='text-2xl font-bold mb-4'>Discover what’s trending in the store</h2>
 
                     <p className='text-lg'>
@@ -45,7 +45,7 @@ const Main = () => {
                     </p>
                 </div>
 
-                <div className='spacing mb-24'>
+                <div className='xl:spacing mb-24'>
                     <h2 className='text-2xl font-bold mb-4'>New featured GPTs every week</h2>
 
                     <p className='text-lg mb-4'>
@@ -79,7 +79,7 @@ const Main = () => {
                     </ul>
                 </div>
 
-                <div className='spacing mb-24'>
+                <div className='xl:spacing mb-24'>
                     <h2 className='text-2xl font-bold mb-4'>Include your GPT in the store</h2>
 
                     <p className='text-lg mb-4'>Building your own GPT is simple and doesn&apos;t require any coding skills.</p>
@@ -104,7 +104,7 @@ const Main = () => {
                     </p>
                 </div>
 
-                <div className='spacing mb-24'>
+                <div className='xl:spacing mb-24'>
                     <h2 className='text-2xl font-bold mb-4'>Builders can earn based on GPT usage</h2>
 
                     <p className='text-lg'>
@@ -112,7 +112,7 @@ const Main = () => {
                     </p>
                 </div>
 
-                <div className='spacing mb-24'>
+                <div className='xl:spacing mb-24'>
                     <h2 className='text-2xl font-bold mb-4'>Team and Enterprise customers can manage GPTs</h2>
 
                     <p className='text-lg mb-6'>

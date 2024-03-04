@@ -11,14 +11,14 @@ const Hero = () => {
         <div className='wrapper relative  px-5 mx-auto pt-40'>
             <span className='text-xl text-white'>Blog</span>
 
-            <div className='flex text-white mb-20'>
+            <div className='flex flex-col md:flex-row md:gap-x-7 text-white mb-20'>
                 <div className='basis-1/2'>
 
-                    <h1 className='text-7xl max-w-[30rem] w-full'>Introducing the GPT Store</h1>
+                    <h1 className='text-4xl mb-3 md:text-6xl xl:text-7xl max-w-[30rem] w-full'>Introducing the GPT Store</h1>
                 </div>
 
                 <div className='basis-1/2'>
-                    <p className='text-2xl mb-12'>
+                    <p className='text-2xl mb-6'>
                         We’re launching the GPT Store to help you find useful and popular custom versions of ChatGPT.
                     </p>
 
