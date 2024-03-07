@@ -7,7 +7,7 @@ type ReusableImageProps = {
   imgSrc: string | null;
   text: string | null;
   href?: string;
-  whiteColor: boolean;
+  whiteColor?: boolean;
 };
 
 function ReusableImage({ imgSrc, text, href, whiteColor }: ReusableImageProps) {
