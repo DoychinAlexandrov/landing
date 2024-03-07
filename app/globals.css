@@ -56,6 +56,14 @@ body {
      @apply hover:underline hover:underline-offset-2 hover:decoration-1 cursor-pointer
   }
 
+  .fade-line {
+    @apply underline decoration-1 underline-offset-4 cursor-pointer transition-all  duration-300 hover:decoration-gray-300
+  }
+
+  .spacing {
+    @apply max-w-[38rem] w-full ml-[15rem]
+  }
+
 
 }
 
