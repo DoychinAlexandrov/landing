@@ -14,13 +14,10 @@ const sourceSansPro = Source_Sans_3({
 });
 
 export const metadata: Metadata = {
-  applicationName: "SSTrader",
-  title: "SSTrader | SSTrader Metrics App",
+  applicationName: "OpenAi Clone",
+  title: "OpenAi Clone",
   description:
-    "Football predictions tool, mathematical models and artificial intelligence - all in one product!",
-  // icons: {
-  //   icon: {}
-  // }
+    "landing page",
   openGraph: {},
   robots: {
     index: true,

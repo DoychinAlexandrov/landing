@@ -2,7 +2,7 @@
 import React from "react";
 import Link from "next/link";
 import Image from "next/image";
-import Logo from "../../../public/img/logo.svg";
+import Logo from "../../../public/img/ailogo.png";
 import { socialMedias } from "../../fixtures/SocialMedia";
 import { documentItems } from "../../fixtures/DocumentItems"
 import { FaArrowUp } from "react-icons/fa6";
@@ -27,7 +27,7 @@ const Footer = () => {
           <div className="grid grid-cols-2 md:grid-cols-4 xl:grid-cols-6 gap-y-8 md:gap-2 text-white">
             <div className="mb-10 col-span-2 md:col-span-6 xl:col-span-2">
               <Link href="">
-                <Image src={Logo} alt="logo" />
+                <Image src={Logo} alt="logo" width={65} height={65} />
               </Link>
             </div>
 

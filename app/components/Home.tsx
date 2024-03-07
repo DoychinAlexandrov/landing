@@ -9,7 +9,6 @@ import Research from "./Research/Research";
 import Products from "./Products/Products";
 import Testimonial from "./Testimonal/Testimonial";
 import JoinUs from "./JoinUs/JoinUs";
-import Footer from "./Footer";
 
 const Home = () => {
   return (
@@ -23,7 +22,6 @@ const Home = () => {
       <Products />
       <Testimonial />
       <JoinUs />
-      <Footer />
     </>
   );
 };

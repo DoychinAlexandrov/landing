@@ -1,7 +1,7 @@
 'use client'
 
 import React from 'react'
-import Logo from '../../../public/img/logo.svg'
+import Logo from '../../../public/img/ailogo.png'
 import { useState, useEffect, useRef } from 'react';
 
 import {IoIosArrowDown} from "react-icons/io";
@@ -80,10 +80,10 @@ const Nav = () => {
     <header style={{backgroundColor: `${color}`}} className='fixed left-0 top-0 w-full text-sm ease-in duration z-10'>
         <div ref={ref} className='max-w-[1520px] m-auto flex justify-between py-5 px-5 items-center'>
         {/* left side */}
-        <div ref={animatationParent} className='flex items-center gap-20'>
+        <div ref={animatationParent} className='flex items-center gap-36'>
             {/* logo */}
             <Link href=''>
-                <Image src={Logo} alt='logo'/>
+                <Image src={Logo} alt='logo' width={65} height={65}/>
             </Link>
             {isSideMenuOpen && <MobileNav closeSideMenu={closeSideMenu} />}
             
